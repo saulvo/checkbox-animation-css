@@ -1,34 +1,24 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-@property --opacity {
-  syntax: '<percentage>';
-  initial-value: 100%;
-  inherits: false;
-}
-
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
+
   width: 100%;
   height: 100vh;
+
   background-color: #000;
 }
 
 .wrapper {
   overflow: hidden;
   position: relative;
+
   width: 200px;
   aspect-ratio: 1;
   border-radius: 5px;
@@ -40,14 +30,20 @@ body {
   height: 100%;
 }
 
+@property --opacity {
+  syntax: '<percentage>';
+  initial-value: 100%;
+  inherits: false;
+}
+
 .check-box::after {
   position: absolute;
   inset: -25%;
   width: 150%;
+
   aspect-ratio: 1;
   content: '';
   background-image: conic-gradient(violet var(--opacity), transparent, transparent);
-  -webkit-animation: conic-gradient 1s ease-in-out 0s;
   animation: conic-gradient 1s ease-in-out;
 }
 
@@ -63,11 +59,12 @@ body {
 .line-long {
   position: absolute;
   z-index: 10;
+
   display: block;
   height: 8%;
   width: 0;
   border-radius: 3px;
-  -webkit-transform-origin: left;
+
   transform-origin: left;
   background-color: violet;
 }
@@ -75,16 +72,13 @@ body {
 .line-tip {
   left: 20%;
   top: 48%;
-  -webkit-transform: rotate(50deg);
   transform: rotate(50deg);
 }
 
 .line-long {
   top: 80%;
   left: 42%;
-  -webkit-transform: rotate(-50deg);
   transform: rotate(-50deg);
-  -webkit-transform-origin: left;
   transform-origin: left;
 }
 
@@ -100,7 +94,6 @@ input {
 
 input:checked ~ .check-box .line-tip,
 input:checked ~ .check-box .line-long {
-  -webkit-transition: all 0.35s;
   transition: all 0.35s;
 }
 
@@ -110,17 +103,7 @@ input:checked ~ .check-box .line-tip {
 
 input:checked ~ .check-box .line-long {
   width: 75%;
-  -webkit-transition-delay: 0.35s;
   transition-delay: 0.35s;
-}
-
-@-webkit-keyframes conic-gradient {
-  0% {
-    --opacity: 0%;
-  }
-  100% {
-    --opacity: 100%;
-  }
 }
 
 @keyframes conic-gradient {
@@ -132,30 +115,12 @@ input:checked ~ .check-box .line-long {
   }
 }
 
-@-webkit-keyframes icon-line-tip {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 40%;
-  }
-}
-
 @keyframes icon-line-tip {
   0% {
     width: 0;
   }
   100% {
     width: 40%;
-  }
-}
-
-@-webkit-keyframes icon-line-long {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 75%;
   }
 }
 
